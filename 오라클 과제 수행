@@ -1,0 +1,29 @@
+<html lang="ko">
+
+<head> 
+    <meta charset="UTF-8">
+    <title>HTML Paragrahp</title>
+
+</head>
+<body>
+
+<span style="font-size:3em";> <b>꽉잡아 오라클 동아리 부원 모집</b>
+<br>
+ <br>   <span style="font-size:30px";> <b>코딩에 관심있는 학생 여러분 환영합니다.</b>
+    <br>
+    <br> 평소 코딩과 컴퓨터에 관심있는 학생을 대상으로 부원을 모집합니다. 문과든 이과든 상관 없습니다.
+    <br> 평소 코딩에 관심있었던 여러 학생들의 지원바랍니다.
+    <br>
+    <ul>
+   <li>     <span style="font-size:30px";> <b>모집기간</b></span> 
+    <span style="font-size:28px";> :3월 2일~3월 11일  </span> </li>   
+   <li>     <span style="font-size:30px";> <b>모집분야</b></span>      
+    <span style="font-size:28px";> :프로그래머,정보 보안 전문가, 빅데이터 전문가  </span> </li>   
+    <li>    <span style="font-size:30px";> <b>지원방법</b></span>      
+    <span style="font-size:28px";> :양식 작성 후 구글폼 접수   </span>    </li>
+   <br> <em>지원서 양식은 창체 동아리 신청 공지 게시판에 있습니다.</em>
+   <br>
+   <br> <span style="font-size:40";> <b>혜택</b></span>
+   <br>
+   <br> a.활동 중 LG그램 지급
+   <br> b.정기자로 진급하면 장학금 지급
