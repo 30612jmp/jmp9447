@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <style>
+    .chat-content{ height: 350px;  overflow-y: scroll}
+    .line { margin-top: 10px; display: flex;}
+    .mine {margin-left: auto;}
+    </style>
+<form action="form.html">
+<div class="chat-content">
+    <div class="line">
+        <span class="'chat-box mine ">안녕!</span>
+    </div>
+    <div class="chat-box mine">안녕!</span>
+    </div>
+</div>
+<input class="chat box" id="input">
+<button id="send">전송</button>
+</form>
+</body>
+</html>
+
+-----------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+<h1> 안녕하세요 반갑습니다!</h1>
+</body>
+</html>
