@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .chat-content { height: 350px; overflow-y: scroll;}
+        .line { margin-top: 10px; display: flex;}
+        .chat-box { background: #eee; padding: 5px; max-width: 200px;}
+        .mine { margin-left: auto;}
+    </style>
+</head>
+<body>
+    <div class="chat-content" id="chatContent">
+        <div class="line">
+            <span class="chat-box">안녕?</span>
+        </div>
+        <div class="line">
+            <span class="chat-box mine">안녕!</span>
+        </div>
+    </div>
+    <div class="input-container">
+        <input type="text" id="usermsg" placeholder="메시지를 입력하세요">
+        <button id="Button">전송</button>
+    </div>
+
+    <script src="https://cdn.skypack.dev/openai"></script>
+    <script type="module">
+        import { Configuration, OpenAIApi } from 'https://cdn.skypack.dev/openai';
+
+        const configuration = new Configuration({
+            apiKey: "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"
+        });
+        const openai = new OpenAIApi(configuration);
+
+        const button = document.getElementById("Button");
+        button.addEventListener("click", sendMessage);
+
+        async function sendMessage() {
+            const usermsg = document.getElementById("usermsg");
+            const message = usermsg.value.trim();
+
+            if (message !== "") {
+                const chatContent = document.getElementById("chatContent");
+                const line = document.createElement("div");
+                line.className = "line";
+                const chatBox = document.createElement("span");
+                chatBox.className = "chat-box mine";
+                chatBox.textContent = message;
+
+                line.appendChild(chatBox);
+                chatContent.appendChild(line);
+                usermsg.value = "";
+                chatContent.scrollTop = chatContent.scrollHeight;
+
+                const response = await openai.createCompletion({
+                    model: "text-davinci-003",
+                    prompt: message,
+                    temperature: 1,
+                    max_tokens: 256,
+                    top_p: 1,
+                    frequency_penalty: 0,
+                    presence_penalty: 0,
+                });
+                const reply = response.data.choices[0].text.trim();
+
+                const replyLine = document.createElement("div");
+                replyLine.className = "line";
+                const replyBox = document.createElement("span");
+                replyBox.className = "chat-box";
+                replyBox.textContent = reply;
+
+                replyLine.appendChild(replyBox);
+                chatContent.appendChild(replyLine);
+                chatContent.scrollTop = chatContent.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
